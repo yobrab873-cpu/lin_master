@@ -66,12 +66,15 @@ def upd():
 	clear()
 	banner = ("Updating system")
 	print(Fore.YELLOW + Style.BRIGHT + banner)
+	os.system("bash .upd.sh")
+	print(Fore.GREEN + "system is up to date")
+	print("")
 	input(Fore.YELLOW + "press enter to continue")
 
 #--------------------------package installer-----------------------#
 def new():
 	clear()
-	banner = subprocess.getoutput("figlet LIN_PACKAGES")
+	banner = subprocess.getoutput("figlet PACKAGES")
 	print(Fore.YELLOW + Style.BRIGHT + banner)
 	input(Fore.GREEN + "press enter to continue: ")
 	print("")

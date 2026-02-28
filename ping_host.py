@@ -7,7 +7,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 
 
-active_hosts = []
+
 
 def ping_host(ip):
     try:
@@ -27,6 +27,7 @@ def ping_host(ip):
 
 def main():
     os.system("clear")
+    active_hosts = []
 
     print(c.green() + "================================================")
     print(c.light_blue() + "=           FAST HOST DISCOVERY SCANNER        =")

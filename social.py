@@ -33,7 +33,8 @@ def start():
 	print("")
 def act():
 	print(Fore.YELLOW + "launching zphisher")
-	os.chdir("/home/Lin_master/zphisher")
+	BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+	os.chdir(os.path.join(BASE_DIR, "zphisher"))
 	print(Fore.RED + "This is for educational purposes and ethical hacking practise on maintained labs or authorized places")
 
 	os.system("bash zphisher.sh")
