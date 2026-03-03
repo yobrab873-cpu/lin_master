@@ -28,7 +28,7 @@ print(Fore.GREEN + Style.BRIGHT + banner)
 print(Fore.CYAN + "--------------------------------------------------")
 print(Fore.MAGENTA + Style.BRIGHT + "WELCOME TO LINUX HELPER")
 print(Fore.CYAN + "----------------------------------------[v1.0.0]----")
-print(Fore.CYAN + "Developed by [CYBERNEST™] (©2026)")
+print(Fore.CYAN + "Developed by [BRIAN NJUGUNA™] (©2026)")
 print("")
 
 print(Fore.GREEN + "loading.....")
@@ -107,7 +107,7 @@ def new_file():
 
 		else:
 			print(Fore.GREEN + "[✓] Apache directory is being created")
-			os.system(f"mkdir {dir_name}")
+			os.mkdir(dir_name)
 			print(Fore.GREEN + (f"directory {dir_name} created ✓"))
 			input(Fore.YELLOW + "press enter to continue")
 
@@ -141,7 +141,7 @@ def commands():
 
 #-------------------MENU----------------------------#
 while running:
-	clear()
+
 	banner = subprocess.getoutput("figlet LIN_MASTER")
 	print(Fore.GREEN + Style.BRIGHT + banner)
 
@@ -154,22 +154,27 @@ while running:
 	print("")
 
 	print(Fore.MAGENTA + """
-	 0. Develop linux master
-	 1. Port scanning
-	 2. Web exploitation
-	 3. Phishing
-	 4. Update system
-	 5. Install package
-	 6. Create files and Directories
-	 7. Learn commands
-	 8. Help
-	 9. Exit
-	10. Host enumaration
+	|
+	|  0. Develop linux master			 |
+	|  1. Port scanning				 |
+	|  2. Web exploitation				 |
+	|  3. Phishing					 |
+	|  4. Update system				 |
+	|  5. Install package				 |
+	|  6. Create files and Directories		 |
+	|  7. Learn commands				 |
+	|  8. Help					 |
+	|  9. Exit					 |
+	| 10. Host enumaration 				 |
+	| 99. clear screen                               |
 	""")
 	print(Fore.YELLOW + "-----------------------------------------")
 	print("Choose from menu")
 	choice = input(": ")
 	match choice:
+		case "99":
+			 clear()
+
 		case "0":
 			clear()
 			dev()

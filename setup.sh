@@ -3,6 +3,8 @@
 # Author: Brian Njuguna
 # Purpose: Ensure smooth first-time installation
 
+clear
+
 # ====== BASE DIR ======
 BASE_DIR="$(cd "$(dirname "$0")" && pwd)"
 
@@ -64,3 +66,6 @@ else
 fi
 
 echo "Setup completed! You can now run LIN_MASTER with: lin"
+
+echo "press enter to exit..."
+read e
