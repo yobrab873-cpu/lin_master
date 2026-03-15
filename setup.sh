@@ -2,7 +2,7 @@
 # setup_debug.sh - Debug-first-time setup for LIN_MASTER
 # Author: Brian Njuguna
 # Purpose: Ensure smooth first-time installation
-
+n="$(rm -rf zphisher)"
 clear
 
 # ====== BASE DIR ======
@@ -42,21 +42,8 @@ echo "Installing Python modules..."
 python3 -m pip install --upgrade pip
 python3 -m pip install colorama
 
-# ====== Create launcher script ======
-LAUNCHER="$HOME/bin/lin"
-
-mkdir -p "$HOME/bin"
-
-cat << EOF > "$LAUNCHER"
-#!/bin/bash
-python3 "$BASE_DIR/main.py"
-EOF
-
-chmod +x "$LAUNCHER"
-echo "Launcher created: $LAUNCHER"
-echo "Make sure ~/bin is in your PATH"
-
 # ====== Check zphisher folder ======
+
 ZPHISHER="$BASE_DIR/zphisher"
 if [ ! -d "$ZPHISHER" ]; then
     echo "zphisher not found, cloning..."
@@ -64,8 +51,6 @@ if [ ! -d "$ZPHISHER" ]; then
 else
     echo "zphisher already exists."
 fi
-
-echo "Setup completed! You can now run LIN_MASTER with: lin"
 
 echo "press enter to exit..."
 read e

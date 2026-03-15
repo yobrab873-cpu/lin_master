@@ -24,6 +24,16 @@ def ping_host(ip):
     except Exception:
         return None
 
+def save(active_hosts):
+    print("do you want to save report (y/n)")
+    ch = input(": ").lower()
+
+    if ch == "y":
+        with open("reports/active_host.txt", "w") as file:
+            for host in active_hosts:
+                file.write(host + "\n")
+
+        print("created on reports/active_host.txt")
 
 def main():
     os.system("clear")
@@ -59,12 +69,12 @@ def main():
 
         for future in as_completed(futures):
             result = future.result()
-            os.system("clear")
 
             if result:
                 active_hosts.append(result)
 
     print("\nScan Completed.")
+    os.system("clear")
     print("================================================")
     print("=                  SCAN REPORT                 =")
     print("================================================")
@@ -74,6 +84,9 @@ def main():
 
     for host in active_hosts:
         print(f"[+] {host} is UP")
+
+    save(active_hosts)
+
 
 
 if __name__ == "__main__":

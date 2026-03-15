@@ -12,9 +12,6 @@ clear()
 
 #-----------------------done---------------------#
 
-print("All dependencies installed successfully!")
-
-clear()
 
 
 from colorama import Fore, Style, init
@@ -44,7 +41,7 @@ def dev():
 	sur = input(": "). lower()
 	if sur == "y" or sur == "yes":
 
-		os.system("nano /home/Lin_master/linux.py")
+		os.system("nano /home/lin_master/linux.py")
 
 
 
@@ -148,7 +145,7 @@ while running:
 	print(Fore.CYAN + "--------------------------------------------------")
 	print(Fore.MAGENTA + Style.BRIGHT + "WELCOME TO LINUX HELPER")
 	print(Fore.CYAN + "----------------------------------------[v1.0.0]--")
-	print(Fore.CYAN + "Developed by [CYBERNEST™] (©2026)")
+	print(Fore.CYAN + "Developed by [BRIAN NJUGUNA™] (©2026)")
 	print("")
 	print(Fore.YELLOW + "----------------MENU------------------")
 	print("")
