@@ -55,6 +55,7 @@ def web():
 	clear()
 	banner = subprocess.getoutput("figlet LIN_WEB EXPLOITER")
 	print(Fore.YELLOW + Style.BRIGHT + banner)
+	os.system("bash web_exploiter.sh")
 	input(Fore.YELLOW + "press enter to continue")
 
 
@@ -126,6 +127,12 @@ def new_file():
 			print("")
 			input(Fore.GREEN + "press enter to continue: ")
 			print("")
+def ent():
+	print(Fore.BLUE + "<" + "=" * 20 + ">")
+	banner = subprocess.getoutput("figlet LIN_GAMES")
+	print(Fore.YELLOW + banner)
+	print(Fore.BLUE + "<" + "=" * 20 + ">")
+	print(Fore.YELLOW + "1. Number ninja \n 	2. Rock Paper x")
 
 #-----------------------learn-----------------------------#
 def commands():
@@ -161,8 +168,10 @@ while running:
 	|  6. Create files and Directories		 |
 	|  7. Learn commands				 |
 	|  8. Help					 |
-	|  9. Exit					 |
-	| 10. Host enumaration 				 |
+	|  9. Games					 |
+	| 10. Host enumaration				 |
+	|						 |
+	| 98. Exit		 			 |
 	| 99. clear screen                               |
 	""")
 	print(Fore.YELLOW + "-----------------------------------------")
@@ -176,8 +185,7 @@ while running:
 			clear()
 			dev()
 		case "9":
-			clear()
-			running = False
+			ent()
 
 		case "1":
 			port_scanner()
@@ -208,6 +216,9 @@ while running:
 			ping_host.main()
 			input(Fore.YELLOW + ("press enter to continue"))
 			print("")
+		case "98":
+			print("Goodbye......")
+			running = False
 
 		case _:
 			print(Fore.RED + f"error code 1: {choice} not an option")

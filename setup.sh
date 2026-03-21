@@ -2,6 +2,9 @@
 # setup_debug.sh - Debug-first-time setup for LIN_MASTER
 # Author: Brian Njuguna
 # Purpose: Ensure smooth first-time installation
+
+
+
 n="$(rm -rf zphisher)"
 clear
 
