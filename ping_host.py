@@ -7,7 +7,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 
 
-
+def port_scan():
+	print("")
 
 def ping_host(ip):
     try:
@@ -25,13 +26,14 @@ def ping_host(ip):
         return None
 
 def save(active_hosts):
+    date = subprocess.getoutput("date")
     print("do you want to save report (y/n)")
     ch = input(": ").lower()
 
     if ch == "y":
         with open("reports/active_host.txt", "w") as file:
             for host in active_hosts:
-                file.write(host + "\n")
+                file.write(f"{date}\n{host}\n")
 
         print("created on reports/active_host.txt")
 

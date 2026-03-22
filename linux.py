@@ -1,4 +1,5 @@
 import ping_host
+import port_scan
 import helper
 import os
 import time
@@ -49,7 +50,8 @@ def port_scanner():
 	clear()
 	banner = subprocess.getoutput("figlet LIN_PORT SCANNER")
 	print(Fore.YELLOW + Style.BRIGHT + banner)
-	input(Fore.YELLOW + "press enter to continue")
+
+	input("press enter to continue")
 #---------WEB EXPLOITATION FUNCTION--------------------#
 def web():
 	clear()
@@ -146,6 +148,8 @@ def commands():
 #-------------------MENU----------------------------#
 while running:
 
+
+	print(Fore.CYAN + "<" + "=" * 50 + ">")
 	banner = subprocess.getoutput("figlet LIN_MASTER")
 	print(Fore.GREEN + Style.BRIGHT + banner)
 
@@ -189,6 +193,7 @@ while running:
 
 		case "1":
 			port_scanner()
+			port_scan.main()
 
 		case "2":
 			web()
