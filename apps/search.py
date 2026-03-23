@@ -57,8 +57,10 @@ def lin_dict():
             else:
                 print(Fore.RED + f"❌ Failed (status: {res.status_code})")
 
+
         except requests.exceptions.RequestException as e:
             print(Fore.RED + f"❌ Network error: {e}")
+            print(Fore.RED + "Please connect to the internet and try again")
 
         input(Fore.YELLOW + "\nPress Enter to search again...")
 

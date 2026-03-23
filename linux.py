@@ -6,7 +6,7 @@ import time
 import subprocess
 import social
 
-from apps import search 
+from apps import search, calculator 
 
 def clear():
 	os.system("clear")
@@ -181,6 +181,10 @@ def more_apps():
 	match user_ch:
 		case "1":
 			search.lin_dict()
+
+		case "2":
+			calculator.main()
+
 		case _:
 			print(Fore.RED + "invalid user choice")
 #-------------------MENU----------------------------#
