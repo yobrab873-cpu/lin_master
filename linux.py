@@ -6,6 +6,8 @@ import time
 import subprocess
 import social
 
+from apps import search 
+
 def clear():
 	os.system("clear")
 
@@ -144,7 +146,43 @@ def commands():
 	input(Fore.GREEN + "press enter to continue: ")
 	print("")
 
+#-------------------------moreapps------------------#
+def more_apps():
+	print(Fore.CYAN + "<" + "=" * 50 + ">")
+	banner = subprocess.getoutput("figlet LIN_MASTER")
+	print(Fore.GREEN + Style.BRIGHT + banner)
+	print(Fore.CYAN + "--------------------------------------------------")
+	print(Fore.MAGENTA + Style.BRIGHT + "WELCOME TO LINUX HELPER")
+	print(Fore.CYAN + "----------------------------------------[v1.0.0]--")
+	print(Fore.CYAN + "Developed by [BRIAN NJUGUNA™] (©2026)")
+	print("")
+	print(Fore.YELLOW + "----------------MENU------------------")
+	print("")
 
+	print(Fore.MAGENTA + """
+	|
+        |  0. ....                                       |
+        |  1. Lin Dictionary                             |
+        |  2. Calculator                                 |
+        |  3. N/A                                        |
+        |  4. N/A                                        |
+        |  5. N/A                                        |
+        |  6. N/A                                        |
+        |  7. N/A                                        |
+        |  8. N/A                                        |
+        |  9. N/A                                        |
+        | 10. N/A                                        |
+        | 11. N/A                                        |
+        |                                                |
+        | 98. Exit                                       |
+        | 99. clear screen                               |
+	""")
+	user_ch = input("--\n ")
+	match user_ch:
+		case "1":
+			search.lin_dict()
+		case _:
+			print(Fore.RED + "invalid user choice")
 #-------------------MENU----------------------------#
 while running:
 
@@ -174,7 +212,8 @@ while running:
 	|  8. Help					 |
 	|  9. Games					 |
 	| 10. Host enumaration				 |
-	|						 |
+	| 11. More apps               			 |
+        |         					 |
 	| 98. Exit		 			 |
 	| 99. clear screen                               |
 	""")
@@ -221,6 +260,9 @@ while running:
 			ping_host.main()
 			input(Fore.YELLOW + ("press enter to continue"))
 			print("")
+		case "11":
+			more_apps()
+
 		case "98":
 			print("Goodbye......")
 			running = False

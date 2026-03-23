@@ -2,6 +2,10 @@ import subprocess
 import os
 from datetime import datetime
 
+from colorama import Fore, Style, init
+init(autoreset=True)
+
+
 REPORT_DIR = "reports"
 REPORT_FILE = f"{REPORT_DIR}/port_scan.txt"
 
@@ -18,8 +22,8 @@ def save_report(data):
 
 
 def run_scan(command):
-    print(f"\n[+] Running: {' '.join(command)}\n")
-    
+    print(Fore.CYAN + f"\n[+] Running: {' '.join(command)}\n")
+
     try:
         result = subprocess.run(
             command,
@@ -34,11 +38,11 @@ def run_scan(command):
         save_report(output)
 
     except Exception as e:
-        print(f"[!] Error: {e}")
+        print(Fore.RED + f"[!] Error: {e}")
 
 
 def menu():
-    print("""
+    print(Fore.BLUE + """
 ======== PORT SCANNER MENU ========
 1. Fast Scan (Top 100 ports)
 2. TCP Connect Scan
@@ -48,6 +52,7 @@ def menu():
 6. Service Version Detection (-sV)
 7. Aggressive Scan (-A)
 8. Custom Scan (manual flags)
+9. Custom port
 ==================================
 """)
 
@@ -89,6 +94,9 @@ def main():
             flags = input("Enter custom Nmap flags: ")
             cmd = ["nmap"] + flags.split() + [target]
             run_scan(cmd)
+        elif choice == "9":
+            port = input(Fore.YELLOW + "enter port to scan: ")
+            run_scan([f"nmap", "-p", port, target]) 
 
         else:
             print("[!] Invalid choice")
