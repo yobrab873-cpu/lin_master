@@ -5,25 +5,18 @@ import time
 # Clear screen at the very beginning
 os.system("clear")
 
-boot_messages = [
-    "||                            lin               ]",
-    "[|||||||||                       master         ]",
-    "[||||||||||||                    having fun?    ]",
-    "[||||||||||||||||                         ]",
-    "[||||||||||||||||||||||                   ]",
-    "[||||||||||||||||||||||||||               ]",
-    "[|||||||||||||||||||||||||||||            ]",
-    "[||||||||||||||||||||||||||||||||         ]",
-    "[||||||||||||||||||||||||||||||||||||     ]",
-    "[|||||||||||||||||||||||||||||||||||||||  ]",
-    "[|||||||||||||||||||||||||||||||||||||||||]"
-]
+
+
+
+load = "|"
+
+t = 0
+for x in range(60):
+	t += 1
+	print("[" + "|" * t + "]", end="\r")
+	time.sleep(0.03)
 
 # Print all boot messages with a short delay
-for sent in boot_messages:
-    print(c.cyan() + sent)
-    time.sleep(0.1)  # Slightly faster for smoother boot
-
 # After boot messages, display the menu
 print("\n" + c.green() + "===============================================================")
 print(c.cyan() + "                       LIN_MASTER BOOTED                   ")

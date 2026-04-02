@@ -27,14 +27,7 @@ def main():
 			print(Fore.RED  + "byeeeee")
 			is_running = False
 		elif choice == "1":
-			while True:
-				try:
-					num1 = int(input("enter first number: ")
-					
-				except ValueError:
-					print(Fore.RED + ("enter a number only")
-
-
+			pass
 
 if __name__=="__main__":
 	main()
