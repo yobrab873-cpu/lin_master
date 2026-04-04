@@ -6,7 +6,7 @@ import time
 import subprocess
 import social
 
-from apps import search, calculator 
+from apps import search, calculator, games
 
 def clear():
 	os.system("clear")
@@ -32,7 +32,7 @@ print(Fore.CYAN + "Developed by [BRIAN NJUGUNA™] (©2026)")
 print("")
 
 print(Fore.GREEN + "loading.....")
-time.sleep(1)
+time.sleep(0.2)
 
 #--------main loop--------------#
 running = True
@@ -78,6 +78,10 @@ def new():
 	clear()
 	banner = subprocess.getoutput("figlet PACKAGES")
 	print(Fore.YELLOW + Style.BRIGHT + banner)
+	package = input("Enter package name: ")
+	print(f"installing {package}")
+	result = subprocess.getoutput(f"sudo apt install {package} -y")
+	print("process finished")
 	input(Fore.GREEN + "press enter to continue: ")
 	print("")
 
@@ -136,7 +140,10 @@ def ent():
 	banner = subprocess.getoutput("figlet LIN_GAMES")
 	print(Fore.YELLOW + banner)
 	print(Fore.BLUE + "<" + "=" * 20 + ">")
-	print(Fore.YELLOW + "1. Number ninja \n 	2. Rock Paper x")
+	print(Fore.YELLOW + "1. Number ninja \n2. Rock Paper x")
+	choice = input(": ")
+	if choice == "1":
+		games.number_ninja()
 
 #-----------------------learn-----------------------------#
 def commands():
@@ -268,6 +275,9 @@ while running:
 			more_apps()
 
 		case "98":
+			print(Fore.CYAN + '⭐⭐⭐⭐⭐')
+			input("rate lin master out of 5 stars \n")
+			print("Thank you for the 5 stars haha thankyou")
 			print("Goodbye......")
 			running = False
 
