@@ -6,18 +6,15 @@
 from colorama import Fore, Style, init
 init(autoreset=True)
 import random
+
 def number_ninja():
 
 	score = 0
-	attempts = 0
-	levels = [x for x in range(1, 101)]
-
-	current_level = 0
-	max = 0
+	attempts = 1
+	current_level = 1
+	max = 10
 	run = True
 	while run:
-		max += 10
-		current_level += 1
 		print("""
 	1.Play
 	2.Exit
@@ -37,10 +34,12 @@ def number_ninja():
 
 			print(Fore.CYAN + f"level {current_level}")
 			print(f"Guess the secret number from 0 to {max}")
-			while attempts != 5:
+			while attempts < 5:
 				user = int(input("enter your guess: "))
 				if user == answer:
 					print(Fore.GREEN + f"Correct ✓ : guessed the number in {attempts} attempts:")
+					current_level += 1
+					max += 10
 					break
 
 				elif user > answer:
