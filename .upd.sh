@@ -12,6 +12,8 @@ else
 fi
 
 echo "Do you want to upgrade system"
+echo "1. yes"
+echo "2. no"
 read choice
 
 if [[ "$choice" == "1" ]]; then
@@ -20,6 +22,6 @@ if [[ "$choice" == "1" ]]; then
 	elif apt upgrade -y; then
 		echo "system upgraded"
 	else
-		echo "upgrade manuall"
+		echo "upgrade manually by running sudo apt upgrade -y"
 	fi
 fi
